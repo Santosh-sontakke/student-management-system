@@ -1,4 +1,7 @@
 package com.santosh.studentmanagementsystem.repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.santosh.studentmanagementsystem.model.Student;
 
-public class StudentRepository {
+public interface StudentRepository extends JpaRepository<Student, Long>{
 }
+
