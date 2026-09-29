@@ -1,0 +1,18 @@
+meta {
+  name: Decide Admission
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{baseUrl}}/api/registrations/{{registrationId}}/decision
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "status": "ADMITTED",
+    "batch": "2026-A"
+  }
+}

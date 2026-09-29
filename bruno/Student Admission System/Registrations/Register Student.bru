@@ -1,0 +1,32 @@
+meta {
+  name: Register Student
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/registrations
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "courseId": {{courseId}},
+    "student": {
+      "name": "Asha Patil",
+      "email": "asha.patil@example.com",
+      "phone": "9876543210",
+      "address": "Latur, Maharashtra",
+      "dateOfBirth": "2005-03-15",
+      "gender": "Female",
+      "guardianName": "Ramesh Patil",
+      "highestQualification": "Higher Secondary Certificate",
+      "percentage": 82.5,
+      "category": "Open",
+      "religion": "",
+      "occupation": "Student",
+      "physicallyChallenged": false
+    }
+  }
+}

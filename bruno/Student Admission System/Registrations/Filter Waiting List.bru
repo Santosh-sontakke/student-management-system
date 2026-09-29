@@ -1,0 +1,11 @@
+meta {
+  name: Filter Waiting List
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{baseUrl}}/api/registrations?status=WAITLISTED
+  body: none
+  auth: none
+}
