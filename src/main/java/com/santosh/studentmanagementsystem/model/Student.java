@@ -1,19 +1,19 @@
 package com.santosh.studentmanagementsystem.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import org.springframework.data.annotation.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name, course, email;
+    private String name, email;
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
 
     public Student(){}
-    public Student(Long id, String name, String email, String course){
+    public Student(Long id, String name, String email, Course course){
         this.id=id;
         this.name=name;
         this.course=course;
@@ -35,11 +35,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getCourse() {
+    public Course getCourse() {
         return course;
     }
 
-    public void setCourse(String course) {
+    public void setCourse(Course course) {
         this.course = course;
     }
 
